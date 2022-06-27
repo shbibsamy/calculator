@@ -7,49 +7,87 @@
 }
 
 /* Structure */
-.formulaire-calculette {
+header {
+    margin: 1rem;
+    padding: 1rem;
+    height: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
     width: 500px;
     margin: auto;
+    align-items: center;
+}
+
+.formulaire-calculette {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-.boite-input-valeurs {
+
+fieldset {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    padding: 0.5rem;
 }
-.boite-operateur {
-    display: flex;
-    flex-direction: column;
-}
-.boite-submit {
-    display: flex;
-    flex-direction: column;
-}
+
 /* General styles */
 h1 {
     text-align: center;
 }
 
 /* Label inputs */
-.input-nombre {
-    width: 60%;
-    justify-content: space-between;
+.input-nombre-label {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0.5rem;
 }
 
 .operateur {
     display: flex;
-    justify-self: space-between;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: 0.5rem;
+    height: 2rem;
+    border: 1px solid black;
 }
 
 /* Inputs */
 .input-nombre {
-    width: 70%;
+    width: 30%;
+}
+
+.operateur span {
+    width: 60%;
+}
+
+.operateur input {
+    width: 30%;
+}
+
+.bouton-calculer {
+    margin: 1rem;
+    height: 2rem;
+    width: 60%;
 }
 
 /* Outputs */
 .resultat {
-    height: 30px;
-    margin: 5px;
-    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
     border: 1px solid black;
 }

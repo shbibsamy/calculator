@@ -1,13 +1,52 @@
 /* Reset */
 * {
-
+    font-size: 16;
 }
 
 /* Structure */
-
+.formulaire-calculette {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.boite-input-valeurs {
+    display: flex;
+    flex-direction: column;
+}
+.boite-operateur {
+    display: flex;
+    flex-direction: column;
+}
+.boite-submit {
+    display: flex;
+    flex-direction: column;
+}
 /* General styles */
+h1 {
+    text-align: center;
+}
+
+/* Label inputs */
+.input-nombre {
+    width: 60%;
+    justify-content: space-between;
+}
+
+.operateur {
+    display: flex;
+    justify-self: space-between;
+}
 
 /* Inputs */
 .input-nombre {
+    width: 70%;
+}
 
+/* Outputs */
+.resultat {
+    height: 30px;
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
 }

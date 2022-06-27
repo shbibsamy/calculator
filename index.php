@@ -32,19 +32,19 @@
             </fieldset>
             <fieldset class='boite-operateur'>
                 <label class='operateur'>
-                    <span>Addition</span>
+                    <span>+</span>
                     <input type='radio' name='operateur' checked value='addition'>
                 </label>
                 <label class='operateur'>
-                    <span>Soustraction</span>
+                    <span>-</span>
                     <input type='radio' name='operateur' value='soustraction'>
                 </label>
                 <label class='operateur'>
-                    <span>Multiplication</span>
+                    <span>*</span>
                     <input type='radio' name='operateur' value='multiplication'>
                 </label>
                 <label class='operateur'>
-                    <span>Division</span>
+                    <span>/</span>
                     <input type='radio' name='operateur' value='division'>
                 </label>
                 </fieldset>

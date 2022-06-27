@@ -77,7 +77,7 @@
                             return $n1 * $n2;
                             break;
                         case "division":
-                            if ($n2 !== 0) {
+                            if ($n2 != 0) {
                                 return $n1 / $n2;
                                 break;
                             } else {

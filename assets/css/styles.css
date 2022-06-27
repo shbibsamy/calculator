@@ -38,6 +38,11 @@ fieldset {
     padding: 0.5rem;
 }
 
+.boite-operateur {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* General styles */
 h1 {
     text-align: center;
@@ -55,9 +60,9 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 40%;
     margin: 0.5rem;
-    height: 2rem;
+    height: 5rem;
     border: 1px solid black;
 }
 
@@ -67,6 +72,10 @@ h1 {
 }
 
 .operateur span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
     width: 60%;
 }
 

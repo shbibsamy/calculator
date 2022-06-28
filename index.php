@@ -7,7 +7,7 @@
     <meta name="description" content="Leaning PHP by making a calculator.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Calculette Basique</title>
+    <title>Calculatrice Simple</title>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
             <form action='index.php' method='post' class='formulaire-calculette'>
             <fieldset class='boite-input-valeurs'>
                 <label class='input-nombre-label'>
-                    <input type='text' name='nombre1' class='input-nombre'>
+                    <input type='text' name='nombre1' class='input-nombre' placeholder='0'>
                 </label>
                 <label class='input-nombre-label'>
-                    <input type='text' name='nombre2' class='input-nombre'>
+                    <input type='text' name='nombre2' class='input-nombre' placeholder='0'>
                 </label>
             </fieldset>
             <fieldset class='boite-operateur'>

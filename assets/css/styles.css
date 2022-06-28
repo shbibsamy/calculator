@@ -114,25 +114,21 @@ h1 {
 }
 
 /* Mettre le texte des opérateurs "dans" les boutons radio */
-#addition::after {
+#addition::after , #soustraction::after , #multiplication::after , #division::after {
     margin: auto;
-    content: "+";
     font-size: 2rem;
+}
+#addition::after {
+    content: "+";
 }
 #soustraction::after {
-    margin: auto;
     content: "-";
-    font-size: 2rem;
 }
 #multiplication::after {
-    margin: auto;
     content: "*";
-    font-size: 2rem;
 }
 #division::after {
-    margin: auto;
     content: "/";
-    font-size: 2rem;
 }
 
 .operateur input:checked::before {

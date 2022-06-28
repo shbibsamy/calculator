@@ -18,8 +18,8 @@
             </h1>
         </header>
         <main>
-            <span class='instructions'>Veuillez insérer vos deux chiffres à calculer et choisir votre opérateur.</span>
-            <span class='resultat'>" .(calculer()). "</span>
+            <span class='instructions'>Veuillez insérer vos deux chiffres à calculer et choisir votre opérateur. Appuyer sur le bouton 'égale' pour éffectuer le calcul.</span>
+            <span class='resultat'>" .(traiterInput()). "</span>
             <form action='index.php' method='post' class='formulaire-calculette'>
             <fieldset class='boite-input-valeurs'>
                 <label class='input-nombre-label'>
@@ -49,41 +49,47 @@
             </form>
             </main>";
         
-        function calculer() {
+        function traiterInput() {
             // Voir si la formulaire a été submit
             if (isset($_POST["soumis"])) {
-                $n1 = $_POST["nombre1"];
-                $n2 = $_POST["nombre2"];
+                // Sanitize le input
+                $n1 = htmlspecialchars($_POST["nombre1"]);
+                $n2 = htmlspecialchars($_POST["nombre2"]);
+                // Remplacer virgule en point pour mes amis français.
                 $n1 = str_replace(",", ".", $n1);
                 $n2 = str_replace(",", ".", $n2);
-                // Tester si le string est un integer et le transformer en integer si c'est le cas
+                // Tester si le string est un chiffre et le transformer en float si c'est le cas
                 if (is_numeric($n1) && is_numeric($n2)) {
                     $n1 = floatval($n1);            
                     $n2 = floatval($n2);
-                    // Si c'est un integer, faire des calculs selon l'opérateur choisi
-                    switch ($_POST["operateur"]) {
-                        case "addition":
-                            return $n1 + $n2;
-                            break;
-                        case "soustraction":
-                            return $n1 - $n2;
-                            break;
-                        case "multiplication":
-                            return $n1 * $n2;
-                            break;
-                        case "division":
-                            if ($n2 != 0) {
-                                return $n1 / $n2;
-                                break;
-                            } else {
-                                // L'utilisateur a essayer de diviser par 0. Attention, c'est dangereux !
-                                return "On ne peut pas diviser par 0.";
-                                break;
-                            }
-                    }
+                    // Faire des calculs selon l'opérateur choisi
+                    return calculer($n1, $n2);
                 } else {
                     // L'utilisateur a submit autre chose qu'un integer.
                     return "Merci de saisir une valeur numérique pour nombre 1 et nombre 2.";
+                }
+            }
+        }
+
+        function calculer ($n1, $n2) {
+            switch ($_POST["operateur"]) {
+                case "addition":
+                    return $n1 + $n2;
+                    break;
+                case "soustraction":
+                    return $n1 - $n2;
+                    break;
+                case "multiplication":
+                    return $n1 * $n2;
+                    break;
+                case "division":
+                if ($n2 != 0) {
+                    return $n1 / $n2;
+                    break;
+                } else {
+                    // L'utilisateur a essayer de diviser par 0. Attention, c'est dangereux ! Fin du monde.
+                    return "On ne peut pas diviser par 0.";
+                    break;
                 }
             }
         }

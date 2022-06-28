@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     font-size: 16;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Structure */
@@ -38,13 +39,22 @@ fieldset {
     padding: 0.5rem;
 }
 
+.boite-input-valeurs {
+    flex-direction: row;
+}
+
 .boite-operateur {
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-/* General styles */
+/* Titres et texte */
 h1 {
+    text-align: center;
+}
+
+.instructions {
+    width: 70%;
     text-align: center;
 }
 
@@ -63,12 +73,14 @@ h1 {
     width: 40%;
     margin: 0.5rem;
     height: 5rem;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 /* Inputs */
 .input-nombre {
-    width: 30%;
+    width: 5rem;
+    height: 3rem;
+    font-size: 2rem;
 }
 
 .operateur span {
@@ -79,14 +91,61 @@ h1 {
     width: 60%;
 }
 
+/* Modifier le bouton radio de base */
 .operateur input {
-    width: 30%;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    place-content: center;
+}
+
+.operateur input::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 3rem 3rem blue;
+}
+
+/* Mettre le texte des opérateurs "dans" les boutons radio */
+#addition::after {
+    margin: auto;
+    content: "+";
+    font-size: 2rem;
+}
+#soustraction::after {
+    margin: auto;
+    content: "-";
+    font-size: 2rem;
+}
+#multiplication::after {
+    margin: auto;
+    content: "*";
+    font-size: 2rem;
+}
+#division::after {
+    margin: auto;
+    content: "/";
+    font-size: 2rem;
+}
+
+.operateur input:checked::before {
+    transform: scale(1);
 }
 
 .bouton-calculer {
-    margin: 1rem;
-    height: 2rem;
-    width: 60%;
+    margin: 0.5rem;
+    height: 5rem;
+    width: 7rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: white;
 }
 
 /* Outputs */
@@ -94,9 +153,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
-    width: 100%;
+    height: 5rem;
+    width: 70%;
     margin: 1rem;
     padding: 1rem;
     border: 1px solid black;
+    font-size: 1.5rem;
 }

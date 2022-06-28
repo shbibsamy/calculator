@@ -23,10 +23,11 @@ main {
 }
 
 .formulaire-calculette {
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 3px solid black;
 }
 
 fieldset {
@@ -37,6 +38,7 @@ fieldset {
     width: 70%;
     margin: auto;
     padding: 0.5rem;
+    border: none;
 }
 
 .boite-input-valeurs {
@@ -81,6 +83,7 @@ h1 {
     width: 5rem;
     height: 3rem;
     font-size: 2rem;
+    border: 2px solid black;
 }
 
 .operateur span {
@@ -139,7 +142,7 @@ h1 {
     margin: 0.5rem;
     height: 5rem;
     width: 7rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bolder;
     background-color: white;
 }

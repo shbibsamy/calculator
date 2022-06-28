@@ -18,7 +18,7 @@
             </h1>
         </header>
         <main>
-            <span class='instructions'>Veuillez insérer vos deux chiffres à calculer et choisir votre opérateur. Appuyer sur le bouton 'égale' pour éffectuer le calcul.</span>
+            <span class='instructions'>Veuillez insérer vos deux nombres à calculer et choisir un opérateur. Appuyez sur le bouton 'égale' pour effectuer le calcul.</span>
             <span class='resultat'>" .(traiterInput()). "</span>
             <form action='index.php' method='post' class='formulaire-calculette'>
             <fieldset class='boite-input-valeurs'>
@@ -52,7 +52,7 @@
         function traiterInput() {
             // Voir si la formulaire a été submit
             if (isset($_POST["soumis"])) {
-                // Sanitize le input
+                // Sanitise le input
                 $n1 = htmlspecialchars($_POST["nombre1"]);
                 $n2 = htmlspecialchars($_POST["nombre2"]);
                 // Remplacer virgule en point pour mes amis français.

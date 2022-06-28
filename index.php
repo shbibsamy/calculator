@@ -18,41 +18,36 @@
             </h1>
         </header>
         <main>
+            <span class='instructions'>Veuillez insérer vos deux chiffres à calculer et choisir votre opérateur.</span>
+            <span class='resultat'>" .(calculer()). "</span>
             <form action='index.php' method='post' class='formulaire-calculette'>
-
             <fieldset class='boite-input-valeurs'>
                 <label class='input-nombre-label'>
-                    <span>Nombre 1 :</span>
                     <input type='text' name='nombre1' class='input-nombre'>
                 </label>
                 <label class='input-nombre-label'>
-                    <span>Nombre 2 :</span>
                     <input type='text' name='nombre2' class='input-nombre'>
                 </label>
             </fieldset>
             <fieldset class='boite-operateur'>
                 <label class='operateur'>
-                    <span>+</span>
-                    <input type='radio' name='operateur' checked value='addition'>
+                    <input type='radio' name='operateur' checked value='addition' id='addition'>
                 </label>
                 <label class='operateur'>
-                    <span>-</span>
-                    <input type='radio' name='operateur' value='soustraction'>
+                    <input type='radio' name='operateur' value='soustraction' id='soustraction'>
                 </label>
                 <label class='operateur'>
-                    <span>*</span>
-                    <input type='radio' name='operateur' value='multiplication'>
+                    <input type='radio' name='operateur' value='multiplication' id='multiplication'>
                 </label>
                 <label class='operateur'>
-                    <span>/</span>
-                    <input type='radio' name='operateur' value='division'>
+                    <input type='radio' name='operateur' value='division' id='division'>
                 </label>
                 </fieldset>
                 <fieldset class='boite-submit'>
-                    <input type='submit' value='Calculer' class='bouton-calculer' name='soumis'>
+                    <input type='submit' value='=' class='bouton-calculer' name='soumis'>
                 </fieldset>
-            </form>";
-        echo "<span class='resultat'>" .(calculer()). "</span></main>";
+            </form>
+            </main>";
         
         function calculer() {
             // Voir si la formulaire a été submit
@@ -77,7 +72,7 @@
                             return $n1 * $n2;
                             break;
                         case "division":
-                            if ($n2 !== 0) {
+                            if ($n2 != 0) {
                                 return $n1 / $n2;
                                 break;
                             } else {
